@@ -1,0 +1,30 @@
+Project Brief 
+
+Protect Gutenblock Block.
+
+The Wordpress admin editor
+
+The user will place this block on the page . The block will enable the user to enter the password. The user will have the option to either protect the whole page or just parts of the content on the page.
+
+The WordPress front end  
+
+Once this block is detected on the page a password entry box will appear .
+If the user enters the correct password, the page content will be displayed.
+If only certain content is protected then all the other content on the page will be displayed.
+The content that is protected will have a password input box .
+
+
+User Story 
+
+As a user I want a Gutenberg block that I can put other Guten Blocks in. The Block inside this blocks will pass word protected. 
+I have the option to password protect the Content inside the block or the whole page.
+I can edit the Gutenberg block . 
+I can set and change the password.
+I can change the text inside the block requesting for the password.
+I can change the colour of the Block.
+I can change the height and width of the block. The Block will have a default width On Desktop width 300px height 300px on Mobile Device height 100px width 100px.
+This is some I can customise the password popup for the visitor of the site.
+
+As a visitor 
+When I vis the site either the whole page will not be visible or parts of the page will not be visible .
+I will be prompted with a box asking for the correct password. If enter the correct password then the content will be visible for me.
