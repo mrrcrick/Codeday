@@ -6,3 +6,6 @@
     - Navigate to docker-container directory
     - $ docker-compose up - d
     - Visit localhost:8000/wp-admin 
+
+# End Container
+    - $ docker-compose down
