@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  #Database
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: codeday
+      MYSQL_DATABASE: wordpress_db 
+      MYSQL_USER: codeday
+      MYSQL_PASSWORD: codeday
+    volumes:
+      - db_data:/var/lib/mysql
+
+  #Wordpress (based on Apache)
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress_db
+      WORDPRESS_DB_USER: codeday
+      WORDPRESS_DB_PASSWORD: codeday
+    volumes: #["./:/var/www/html"]
+      - ./wordpress:/var/www/html
+ 
+
+volumes:
+  db_data: {}
+  wordpress_data: {}
