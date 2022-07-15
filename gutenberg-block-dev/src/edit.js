@@ -20,6 +20,10 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import { Panel, PanelBody, PanelRow } from '@wordpress/components';
+import { InspectorControls } from "@wordpress/block-editor";
+import { TextControl } from '@wordpress/components';
+//import { more } from '@wordpress/icons';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,27 +33,34 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-
- import { Panel, PanelBody, PanelRow } from '@wordpress/components';
- import { more } from '@wordpress/icons';
-  
- const MyPanel = () => (
-	
- );
 export default function Edit() {
 	return (
+		<div>
+			   
+	<InspectorControls>
 		<Panel header="My Panel">
-		<PanelBody title="My Block Settings" icon={ more } initialOpen={ true }>
-			<PanelRow>My Panel Inputs and Labels</PanelRow>
-		</PanelBody>
-	 </Panel>
+			<PanelBody title="Enter password">
+				<PanelRow>
+					<input/>
+				</PanelRow>
+			</PanelBody>
+			<PanelBody title="Protect page or Just Block ">
+				<PanelRow>
+				<select >
+				<option value="A">Protect Page </option>
+				<option value="B">Protect Block </option>
+				</select>		
+				</PanelRow>
+			</PanelBody>
+		</Panel>
+	</InspectorControls>
 		<p { ...useBlockProps() }>
-	
 		
 			{ __(
-				'Gutenberg Protect Block – hello 2 !! from the editor!',
+				'Gutenberg Protect Block – hello 2 from the editor!',
 				'gutenberg-protect-block'
 			) }
 		</p>
+		</div>
 	);
 }
