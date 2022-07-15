@@ -29,11 +29,25 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
+
+ import { Panel, PanelBody, PanelRow } from '@wordpress/components';
+ import { more } from '@wordpress/icons';
+  
+ const MyPanel = () => (
+	
+ );
 export default function Edit() {
 	return (
+		<Panel header="My Panel">
+		<PanelBody title="My Block Settings" icon={ more } initialOpen={ true }>
+			<PanelRow>My Panel Inputs and Labels</PanelRow>
+		</PanelBody>
+	 </Panel>
 		<p { ...useBlockProps() }>
+	
+		
 			{ __(
-				'Gutenberg Protect Block – hello from the editor!',
+				'Gutenberg Protect Block – hello 2 !! from the editor!',
 				'gutenberg-protect-block'
 			) }
 		</p>
